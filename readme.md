@@ -46,4 +46,49 @@ The architecture follows modern microservices design principles such as separati
 ---
 
 ## Project Structure
+microservices-fastapi/
+│
+├── gateway/
+│ ├── main.py
+│ ├── auth.py
+│ ├── logging_middleware.py
+│ └── exceptions.py
+│
+├── student-service/
+│ ├── main.py
+│ ├── models.py
+│ ├── service.py
+│ └── data_service.py
+│
+├── course-service/
+│ ├── main.py
+│ ├── models.py
+│ ├── service.py
+│ └── data_service.py
+│
+├── requirements.txt
+└── README.md
 
+## Installation & Setup
+
+### 1. Create Virtual Environment
+```bash
+python -m venv venv
+venv\Scripts\activate   # Windows
+```
+### 2. Install dependancies
+```bash
+pip install -r requirements.txt
+```
+### 3.Start Student Service
+```bash
+uvicorn student-service.main:app --port 8001 --reload
+```
+### 4. Start Course Service
+```bash
+uvicorn course-service.main:app --port 8002 --reload
+```
+### 5. Start API Gateway
+```bash
+uvicorn gateway.main:app --port 8000 --reload
+```
