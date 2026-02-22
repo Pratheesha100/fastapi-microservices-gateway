@@ -46,28 +46,27 @@ The architecture follows modern microservices design principles such as separati
 ---
 
 ## Project Structure
-microservices-fastapi/
+microservices-fastapi
+│   README.md
+│   requirements.txt
 │
-├── gateway/
-│ ├── main.py
-│ ├── auth.py
-│ ├── logging_middleware.py
-│ └── exceptions.py
+├───gateway
+│       auth.py
+│       exceptions.py
+│       logging_middleware.py
+│       main.py
 │
-├── student-service/
-│ ├── main.py
-│ ├── models.py
-│ ├── service.py
-│ └── data_service.py
+├───student-service
+│       data_service.py
+│       main.py
+│       models.py
+│       service.py
 │
-├── course-service/
-│ ├── main.py
-│ ├── models.py
-│ ├── service.py
-│ └── data_service.py
-│
-├── requirements.txt
-└── README.md
+└───course-service
+        data_service.py
+        main.py
+        models.py
+        service.py
 
 ## Installation & Setup
 
